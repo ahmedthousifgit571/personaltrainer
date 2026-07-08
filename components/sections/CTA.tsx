@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useReveal } from "@/hooks/useReveal";
-import { frameUrl } from "@/lib/constants";
+import { frameUrl, whatsappUrl } from "@/lib/constants";
 
 export function CTA() {
   const ref = useRef<HTMLElement>(null);
@@ -51,16 +51,18 @@ export function CTA() {
           className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
-            href="mailto:coach@forge.fit?subject=Coaching%20Application"
+            href="mailto:Easava99@gmail.com?subject=Coaching%20Application"
             className="bg-accent px-10 py-5 font-label text-[11px] font-medium tracking-[0.25em] text-black transition-colors hover:bg-white"
           >
             APPLY FOR COACHING
           </a>
           <a
-            href="mailto:coach@forge.fit?subject=Free%20Consult%20Call"
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="border border-white/25 px-10 py-5 font-label text-[11px] tracking-[0.25em] text-white transition-colors hover:border-accent hover:text-accent"
           >
-            BOOK A FREE CALL
+            BOOK A SLOT
           </a>
         </div>
       </div>

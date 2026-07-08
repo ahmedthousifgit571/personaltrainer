@@ -30,3 +30,16 @@ export function buildFrameUrls(isMobile: boolean): string[] {
 }
 
 export const BRAND = "APEX";
+
+// WhatsApp booking. wa.me needs the full international number with no "+" or
+// leading zeros — 91 is the India country code prefixed to the 10-digit mobile.
+export const WHATSAPP_NUMBER = "917034040997";
+export const WHATSAPP_MESSAGE =
+  "Hi! I'd like to book a slot — I want to know more about your 1:1 personal coaching.";
+
+export function whatsappUrl(
+  message: string = WHATSAPP_MESSAGE,
+  number: string = WHATSAPP_NUMBER,
+): string {
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+}

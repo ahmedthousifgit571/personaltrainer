@@ -1,6 +1,7 @@
 "use client";
 
 import { scrollToTarget } from "@/hooks/useLenis";
+import { whatsappUrl } from "@/lib/constants";
 
 export function FloatingCTA() {
   return (
@@ -11,12 +12,14 @@ export function FloatingCTA() {
       >
         VIEW PROGRAMS
       </button>
-      <button
-        onClick={() => scrollToTarget("#contact")}
+      <a
+        href={whatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden bg-accent px-6 py-4 font-label text-[11px] font-medium tracking-[0.2em] text-black transition-colors hover:bg-white sm:block"
       >
-        BOOK A CALL
-      </button>
+        BOOK A SLOT
+      </a>
     </div>
   );
 }

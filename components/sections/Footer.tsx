@@ -1,7 +1,7 @@
 "use client";
 
 import { scrollToTarget } from "@/hooks/useLenis";
-import { BRAND } from "@/lib/constants";
+import { BRAND, whatsappUrl } from "@/lib/constants";
 
 const SITEMAP = [
   { label: "Programs", href: "#programs" },
@@ -11,9 +11,11 @@ const SITEMAP = [
 ];
 
 const SOCIAL = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "YouTube", href: "https://youtube.com" },
-  { label: "WhatsApp", href: "https://wa.me/0000000000" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/easa.va?igsh=MWRjdDNiYTAwemRtZg%3D%3D&utm_source=qr",
+  },
+  { label: "WhatsApp", href: whatsappUrl() },
 ];
 
 export function Footer() {
@@ -66,10 +68,10 @@ export function Footer() {
               CONTACT
             </p>
             <a
-              href="mailto:coach@forge.fit"
+              href="mailto:Easava99@gmail.com"
               className="text-sm text-white/70 transition-colors hover:text-accent"
             >
-              coach@forge.fit
+              Easava99@gmail.com
             </a>
           </div>
         </div>

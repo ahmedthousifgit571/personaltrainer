@@ -3,10 +3,19 @@
 import { useRef } from "react";
 import { useReveal } from "@/hooks/useReveal";
 
-const COLUMNS = [
-  { tall: "/images/bd3.jpg", short: "/images/bd1.jpg" },
-  { tall: "/images/bd5.jpg", short: "/images/bd2.webp", offset: true },
-  { tall: "/images/bd6.jpg", short: "/images/bd4.jpg" },
+// Photo wall — every client image shown in full at its natural aspect ratio,
+// in order (3–12; there is no image 10), flowing left-to-right across a
+// three-column grid.
+const IMAGES = [
+  "/images/Image%20(3).jpg",
+  "/images/Image%20(4).jpg",
+  "/images/Image%20(5).jpg",
+  "/images/Image%20(6).jpg",
+  "/images/Image%20(7).jpg",
+  "/images/Image%20(8).jpg",
+  "/images/Image%20(9).jpg",
+  "/images/esa3.jpg",
+  "/images/Image%20(12).jpg",
 ];
 
 export function Transformations() {
@@ -32,25 +41,15 @@ export function Transformations() {
         <span className="italic text-accent">need a caption.</span>
       </h2>
 
-      <div data-reveal className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {COLUMNS.map((col, i) => (
-          <div
-            key={i}
-            className={`flex flex-col gap-3 ${col.offset ? "sm:mt-12" : ""}`}
-          >
-            <img
-              src={col.tall}
-              alt="Client transformation — before and after"
-              loading="lazy"
-              className="h-auto w-full grayscale transition-[filter] duration-500 ease-out hover:grayscale-0"
-            />
-            <img
-              src={col.short}
-              alt="Client physique result"
-              loading="lazy"
-              className="h-auto w-full grayscale transition-[filter] duration-500 ease-out hover:grayscale-0"
-            />
-          </div>
+      <div data-reveal className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3">
+        {IMAGES.map((src) => (
+          <img
+            key={src}
+            src={src}
+            alt="Client transformation result"
+            loading="lazy"
+            className="h-auto w-full grayscale transition-[filter] duration-500 ease-out hover:grayscale-0"
+          />
         ))}
       </div>
     </section>
