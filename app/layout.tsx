@@ -22,7 +22,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "APEX — Performance Coaching",
+  title: "PROJECT-HULK — Performance Coaching",
   description:
     "Performance coaching for people who refuse average. Strength, nutrition and accountability — forged from a decade of elite competition.",
 };

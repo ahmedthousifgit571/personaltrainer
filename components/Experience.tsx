@@ -11,6 +11,7 @@ import { Hero } from "@/components/Hero";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Stats } from "@/components/sections/Stats";
 import { Marquee } from "@/components/sections/Marquee";
+import { Story } from "@/components/sections/Story";
 import { Programs } from "@/components/sections/Programs";
 import { Method } from "@/components/sections/Method";
 import { Statement } from "@/components/sections/Statement";
@@ -56,6 +57,7 @@ export default function Experience() {
       {/* CONTENT ZONE — normal flow */}
       <main className="relative z-10 bg-black">
         <Stats />
+        <Story />
         <Programs />
         <Marquee />
         <Method />

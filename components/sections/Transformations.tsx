@@ -28,7 +28,7 @@ export function Transformations() {
         data-reveal
         className="mb-16 flex items-center gap-6 font-label text-[10px] tracking-[0.35em] text-white/50"
       >
-        <span>04 — TRANSFORMATIONS</span>
+        <span>05 — TRANSFORMATIONS</span>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 

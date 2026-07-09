@@ -1,7 +1,7 @@
 "use client";
 
 import { scrollToTarget } from "@/hooks/useLenis";
-import { BRAND, whatsappUrl } from "@/lib/constants";
+import { whatsappUrl } from "@/lib/constants";
 
 const SITEMAP = [
   { label: "Programs", href: "#programs" },
@@ -79,12 +79,12 @@ export function Footer() {
 
       <div aria-hidden className="select-none overflow-hidden">
         <p className="translate-y-[12%] text-center font-display text-[32vw] font-black leading-[0.82] tracking-[-0.04em] text-white/10 lg:text-[26vw] lg:translate-y-[16%] lg:leading-[0.78]">
-          {BRAND}
+          HULK
         </p>
       </div>
 
       <div className="flex flex-col gap-2 border-t border-white/10 px-6 py-6 font-label text-[10px] tracking-[0.25em] text-white/40 sm:flex-row sm:justify-between lg:px-12">
-        <p>© 2026 {BRAND} PERFORMANCE COACHING</p>
+        <p>© 2026 HULK PERFORMANCE COACHING</p>
         <p>BUILT DIFFERENT. BUILT DAILY.</p>
       </div>
     </footer>

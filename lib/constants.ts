@@ -29,7 +29,7 @@ export function buildFrameUrls(isMobile: boolean): string[] {
   return urls;
 }
 
-export const BRAND = "APEX";
+export const BRAND = "PROJECT-HULK";
 
 // WhatsApp booking. wa.me needs the full international number with no "+" or
 // leading zeros — 91 is the India country code prefixed to the 10-digit mobile.

@@ -46,7 +46,7 @@ export function Programs() {
           data-reveal
           className="font-label text-[10px] tracking-[0.35em] text-white/50"
         >
-          02 — PROGRAMS
+          03 — PROGRAMS
         </p>
       </div>
 

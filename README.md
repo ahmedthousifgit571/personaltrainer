@@ -1,4 +1,4 @@
-# APEX — Performance Coaching
+# PROJECT-HULK — Performance Coaching
 
 A cinematic, scroll-driven marketing site for a performance/strength coaching brand. Built with Next.js 15, React 19, and Tailwind CSS v4, it centers on a full-screen, scrubbable image-sequence "flythrough" hero synced to scroll via GSAP and Lenis smooth scrolling.
 
