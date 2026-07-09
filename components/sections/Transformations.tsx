@@ -7,12 +7,12 @@ import { useReveal } from "@/hooks/useReveal";
 // in order (3–12; there is no image 10), flowing left-to-right across a
 // three-column grid.
 const IMAGES = [
-  "/images/Image%20(3).jpg",
   "/images/Image%20(4).jpg",
-  "/images/Image%20(5).jpg",
+  "/images/Image%20(3).jpg",
   "/images/Image%20(6).jpg",
-  "/images/Image%20(7).jpg",
+  "/images/Image%20(5).jpg",
   "/images/Image%20(8).jpg",
+  "/images/Image%20(7).jpg",
   "/images/Image%20(9).jpg",
   "/images/esa3.jpg",
   "/images/Image%20(12).jpg",
@@ -28,7 +28,7 @@ export function Transformations() {
         data-reveal
         className="mb-16 flex items-center gap-6 font-label text-[10px] tracking-[0.35em] text-white/50"
       >
-        <span>05 — TRANSFORMATIONS</span>
+        <span>04 — TRANSFORMATIONS</span>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 

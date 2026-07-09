@@ -8,6 +8,7 @@ export const FRAMES = {
   ext: "jpg",
   pad: 3,
   total: 300,
+  mobileTotal: 248, // portrait-cropped set was trimmed shorter than the desktop sequence
   // 1920x1080 decodes to ~8.3MB/frame: step 3 = 100 frames (~830MB desktop),
   // step 6 = 50 frames (~415MB mobile) — inside the RAM budget.
   desktopStep: 3,
@@ -22,8 +23,9 @@ export function frameUrl(n: number, isMobile = false): string {
 
 export function buildFrameUrls(isMobile: boolean): string[] {
   const step = isMobile ? FRAMES.mobileStep : FRAMES.desktopStep;
+  const total = isMobile ? FRAMES.mobileTotal : FRAMES.total;
   const urls: string[] = [];
-  for (let n = 1; n <= FRAMES.total; n += step) {
+  for (let n = 1; n <= total; n += step) {
     urls.push(frameUrl(n, isMobile));
   }
   return urls;
