@@ -29,8 +29,8 @@ export function Statement() {
           >
             {BRAND} sits at the cross-section of{" "}
             <span className="text-accent">sports science</span> and
-            hard-earned discipline — a coaching practice born from ten years
-            of elite competition and a refusal to accept average.
+            hard-earned discipline, a coaching practice forged in elite
+            competition and a refusal to accept average.
           </p>
 
           <button
