@@ -1,11 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { CINEMATIC_VH } from "@/lib/constants";
-import { useLenis, startLenis, stopLenis } from "@/hooks/useLenis";
-import { useImageSequence } from "@/hooks/useImageSequence";
-import { useCanvasSequence } from "@/hooks/useCanvasSequence";
-import { Loader } from "@/components/Loader";
+import { useEffect, useRef, useState } from "react";
+import { useLenis, startLenis } from "@/hooks/useLenis";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -19,38 +15,72 @@ import { Testimonial } from "@/components/sections/Testimonial";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 
+function detectMobile(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(max-width: 1023px), (pointer: coarse)").matches;
+}
+
 export default function Experience() {
-  const cinematicRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Order matters: Lenis bridge first, then frames, then the scrub engine.
   useLenis();
-  const { frames, progress, ready } = useImageSequence();
-  useCanvasSequence({ frames, canvasRef, scrollContainerRef: cinematicRef });
 
-  // Lock scroll while the loader is up
+  // Detect device and start Lenis immediately (no frame preloading needed)
   useEffect(() => {
-    if (ready) startLenis();
-    else stopLenis();
-  }, [ready]);
+    setIsMobile(detectMobile());
+    startLenis();
+
+    // Mark ready after a short delay to allow initial paint
+    const timer = setTimeout(() => setReady(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Ensure video plays as soon as possible
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const playVideo = () => {
+      vid.play().catch(() => {
+        // Autoplay blocked — silently ignore, the poster/first frame still shows
+      });
+    };
+
+    if (vid.readyState >= 3) {
+      playVideo();
+    } else {
+      vid.addEventListener("canplay", playVideo, { once: true });
+    }
+
+    return () => vid.removeEventListener("canplay", playVideo);
+  }, [isMobile]);
+
+  const videoSrc = isMobile ? "/videos/gymMobile.mp4" : "/videos/gymDesktop.mp4";
 
   return (
     <div className="bg-black">
-      <Loader progress={progress} ready={ready} />
       <Navbar />
       <FloatingCTA />
 
-      {/* CINEMATIC ZONE — scroll here scrubs the flythrough */}
-      <section ref={cinematicRef} style={{ height: `${CINEMATIC_VH}vh` }}>
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 h-full w-full"
-            aria-hidden
-          />
-          <div className="scrim pointer-events-none absolute inset-0" />
-          <Hero cinematicRef={cinematicRef} ready={ready} />
-        </div>
+      {/* HERO ZONE — full-screen video background */}
+      <section ref={heroSectionRef} className="relative h-screen w-full overflow-hidden">
+        <video
+          ref={videoRef}
+          key={videoSrc}
+          className="absolute inset-0 h-full w-full object-cover"
+          src={videoSrc}
+          muted
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+        />
+        <div className="scrim pointer-events-none absolute inset-0" />
+        <Hero cinematicRef={heroSectionRef} ready={ready} />
       </section>
 
       {/* CONTENT ZONE — normal flow */}

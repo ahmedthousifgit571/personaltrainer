@@ -6,10 +6,9 @@ import { useReveal } from "@/hooks/useReveal";
 import { frameUrl, whatsappUrl } from "@/lib/constants";
 
 const PROGRAM = {
-  tag: "IN PERSON",
   title: "1:1 Private Coaching",
   still: frameUrl(100),
-  copy: "Hands-on sessions at a private studio. Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
+  copy: "Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
   includes: [
     "Unlimited personalized workout iterations",
     "Advanced macro assessment & daily nutrition logs",
@@ -61,10 +60,7 @@ export function Programs() {
         </div>
 
         <div className="flex flex-col justify-center">
-          <p className="font-label text-[10px] tracking-[0.3em] text-white/50">
-            {PROGRAM.tag}
-          </p>
-          <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight lg:text-4xl">
+          <h3 className="font-display text-3xl font-semibold tracking-tight lg:text-4xl">
             {PROGRAM.title}
           </h3>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">

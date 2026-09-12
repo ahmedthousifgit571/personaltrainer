@@ -28,9 +28,8 @@ export function Statement() {
             className="font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.15] tracking-[-0.02em]"
           >
             {BRAND} sits at the cross-section of{" "}
-            <span className="text-accent">sports science</span> and
-            hard-earned discipline, a coaching practice forged in elite
-            competition and a refusal to accept average.
+            <span className="text-accent">sports science</span>, hard-earned
+            discipline, and an absolute refusal to accept average.
           </p>
 
           <button

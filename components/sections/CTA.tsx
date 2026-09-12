@@ -48,21 +48,17 @@ export function CTA() {
         </p>
         <div
           data-reveal
-          className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-12 flex justify-center"
         >
           <a
-            href="mailto:Easava99@gmail.com?subject=Coaching%20Application"
+            href={whatsappUrl(
+              "Hi! I'd like to apply for coaching — I want to know more about your 1:1 personal coaching."
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-accent px-10 py-5 font-label text-[11px] font-medium tracking-[0.25em] text-black transition-colors hover:bg-white"
           >
             APPLY FOR COACHING
-          </a>
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white/25 px-10 py-5 font-label text-[11px] tracking-[0.25em] text-white transition-colors hover:border-accent hover:text-accent"
-          >
-            BOOK A SLOT
           </a>
         </div>
       </div>
