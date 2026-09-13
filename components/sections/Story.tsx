@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import { scrollToTarget } from "@/hooks/useLenis";
+import { whatsappUrl } from "@/lib/constants";
 
 export function Story() {
   const ref = useRef<HTMLElement>(null);
@@ -64,7 +64,7 @@ export function Story() {
             <p>
               Fitness doesn&rsquo;t have an information problem. It has a
               noise problem a thousand programs all promising the same
-              result. I spent a decade in the gym and with clients cutting
+              result. I spent years in the gym and with clients cutting
               through it, keeping what works and killing the rest.
             </p>
             <p className="text-white">
@@ -73,9 +73,13 @@ export function Story() {
             </p>
           </div>
 
-          <button
+          <a
             data-reveal
-            onClick={() => scrollToTarget("#programs")}
+            href={whatsappUrl(
+              "Hi! I'm ready to start my transformation — I'd like to know more about your coaching programs."
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group mt-10 inline-flex items-center gap-3 font-label text-[11px] tracking-[0.3em] text-white transition-colors hover:text-accent"
           >
             START YOUR TRANSFORMATION
@@ -84,7 +88,7 @@ export function Story() {
               strokeWidth={1.5}
               className="transition-transform duration-300 group-hover:translate-x-1.5"
             />
-          </button>
+          </a>
         </div>
       </div>
     </section>
