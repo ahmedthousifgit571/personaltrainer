@@ -75,9 +75,7 @@ export function Story() {
 
           <a
             data-reveal
-            href={whatsappUrl(
-              "Hi! I'm ready to start my transformation — I'd like to know more about your coaching programs."
-            )}
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-10 inline-flex items-center gap-3 font-label text-[11px] tracking-[0.3em] text-white transition-colors hover:text-accent"

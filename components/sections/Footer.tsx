@@ -5,6 +5,7 @@ import { whatsappUrl } from "@/lib/constants";
 
 const SITEMAP = [
   { label: "Programs", href: "#programs" },
+  { label: "Benefits", href: "#benefits" },
   { label: "Method", href: "#method" },
   { label: "Results", href: "#results" },
   { label: "Contact", href: "#contact" },

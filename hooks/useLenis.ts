@@ -7,7 +7,12 @@ import { gsap, ScrollTrigger } from "@/lib/gsap";
 let lenisInstance: Lenis | null = null;
 
 export function scrollToTarget(target: string) {
-  lenisInstance?.scrollTo(target, { duration: 1.6, offset: 0 });
+  if (lenisInstance) {
+    lenisInstance.scrollTo(target, { duration: 1.6, offset: 0 });
+  } else {
+    const el = document.querySelector(target);
+    el?.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 export function stopLenis() {

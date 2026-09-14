@@ -51,9 +51,7 @@ export function CTA() {
           className="mt-12 flex justify-center"
         >
           <a
-            href={whatsappUrl(
-              "Hi! I'd like to apply for coaching — I want to know more about your 1:1 personal coaching."
-            )}
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-accent px-10 py-5 font-label text-[11px] font-medium tracking-[0.25em] text-black transition-colors hover:bg-white"
