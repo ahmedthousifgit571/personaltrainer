@@ -52,11 +52,13 @@ export default async function TestimonialPage({ params }: PageProps) {
         >
           &ldquo;
         </span>
-        <blockquote className="text-xl leading-relaxed text-white/90 lg:text-2xl lg:leading-relaxed">
+        <blockquote className="whitespace-pre-line text-xl leading-relaxed text-white/90 lg:text-2xl lg:leading-relaxed">
           {testimonial.quote}
         </blockquote>
         <figcaption className="mt-10 font-label text-[11px] tracking-[0.3em] text-white/60">
-          {testimonial.name} — {testimonial.role}
+          {testimonial.role
+            ? `${testimonial.name} — ${testimonial.role}`
+            : testimonial.name}
         </figcaption>
       </figure>
     </main>

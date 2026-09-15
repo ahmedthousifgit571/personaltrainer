@@ -37,7 +37,7 @@ function TestimonialCard({ slug, quote, name, role, long }: Testimonial) {
         </Link>
       )}
       <figcaption className="mt-6 font-label text-[11px] tracking-[0.3em] text-white/70">
-        {name} — {role}
+        {role ? `${name} — ${role}` : name}
       </figcaption>
     </figure>
   );
