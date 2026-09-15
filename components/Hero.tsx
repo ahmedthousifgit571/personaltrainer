@@ -11,27 +11,7 @@ interface Props {
 export function Hero({ cinematicRef, ready }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
 
-  // Scroll-out: fade + blur across the first 25% of the cinematic scroll
-  useEffect(() => {
-    if (!rootRef.current || !cinematicRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.to(rootRef.current, {
-        opacity: 0,
-        y: -40,
-        filter: "blur(8px)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: cinematicRef.current,
-          start: "top top",
-          end: "25% top",
-          scrub: true,
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, [cinematicRef]);
-
-  // Entrance: staggered rise once the loader clears
+  // Entrance: staggered rise once ready
   useEffect(() => {
     if (!ready || !rootRef.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -58,7 +38,7 @@ export function Hero({ cinematicRef, ready }: Props) {
         data-hero-el
         className="mb-8 font-label text-[11px] tracking-[0.45em] text-accent"
       >
-        PERFORMANCE COACHING — EST. 2014
+        PERFORMANCE COACHING 
       </p>
 
       <h1 className="font-ganey leading-[0.92] tracking-[-0.03em]">
@@ -73,13 +53,7 @@ export function Hero({ cinematicRef, ready }: Props) {
         </span>
       </h1>
 
-      <p
-        data-hero-el
-        className="absolute inset-x-0 bottom-10 text-center font-label text-[11px] tracking-[0.4em] text-white/80"
-      >
-        FORGED FROM A DECADE OF ELITE COMPETITION
-      </p>
-
+     
       <span
         aria-hidden
         className="absolute left-6 bottom-10 hidden select-none font-label text-white/40 lg:block"

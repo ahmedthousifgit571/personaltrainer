@@ -18,7 +18,7 @@ export function FloatingCTA() {
         rel="noopener noreferrer"
         className="bg-accent px-4 py-3 font-label text-[10px] font-medium tracking-[0.2em] text-black transition-colors hover:bg-white sm:px-6 sm:py-4 sm:text-[11px]"
       >
-        BOOK A SLOT
+        APPLY FOR COACHING
       </a>
     </div>
   );

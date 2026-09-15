@@ -7,6 +7,7 @@ import { BRAND } from "@/lib/constants";
 
 const LINKS = [
   { label: "PROGRAMS", href: "#programs" },
+  { label: "BENEFITS", href: "#benefits" },
   { label: "METHOD", href: "#method" },
   { label: "RESULTS", href: "#results" },
   { label: "CONTACT", href: "#contact" },
@@ -67,7 +68,7 @@ export function Navbar() {
             <span className="text-accent">.</span>
           </button>
 
-          <ul className="hidden items-center gap-x-12 lg:flex xl:gap-x-20">
+          <ul className="hidden items-center gap-x-8 lg:flex xl:gap-x-14">
             {LINKS.map((link, i) => (
               <Fragment key={link.label}>
                 <li>

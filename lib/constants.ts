@@ -37,7 +37,7 @@ export const BRAND = "PROJECT-HULK";
 // leading zeros — 91 is the India country code prefixed to the 10-digit mobile.
 export const WHATSAPP_NUMBER = "917034040997";
 export const WHATSAPP_MESSAGE =
-  "Hi! I'd like to book a slot — I want to know more about your 1:1 personal coaching.";
+  "Hi! I want to know more about your 1:1 personal coaching.";
 
 export function whatsappUrl(
   message: string = WHATSAPP_MESSAGE,

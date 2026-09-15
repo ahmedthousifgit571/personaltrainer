@@ -1,15 +1,15 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import { scrollToTarget } from "@/hooks/useLenis";
 import { frameUrl, whatsappUrl } from "@/lib/constants";
 
 const PROGRAM = {
-  tag: "IN PERSON",
   title: "1:1 Private Coaching",
   still: frameUrl(100),
-  copy: "Hands-on sessions at a private studio. Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
+  copy: "Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
   includes: [
     "Unlimited personalized workout iterations",
     "Advanced macro assessment & daily nutrition logs",
@@ -30,7 +30,6 @@ const PROGRAM = {
 
 export function Programs() {
   const ref = useRef<HTMLElement>(null);
-  const [open, setOpen] = useState(false);
   useReveal(ref);
 
   return (
@@ -61,85 +60,76 @@ export function Programs() {
         </div>
 
         <div className="flex flex-col justify-center">
-          <p className="font-label text-[10px] tracking-[0.3em] text-white/50">
-            {PROGRAM.tag}
-          </p>
-          <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight lg:text-4xl">
+          <h3 className="font-display text-3xl font-semibold tracking-tight lg:text-4xl">
             {PROGRAM.title}
           </h3>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
             {PROGRAM.copy}
           </p>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="program-detail"
-            className="mt-8 inline-flex w-fit items-center gap-2 font-label text-[11px] tracking-[0.25em] text-accent transition-colors hover:text-white"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToTarget("#contact");
+            }}
+            className="group mt-8 inline-flex w-fit items-center gap-2 font-label text-[11px] tracking-[0.25em] text-accent transition-colors hover:text-white"
           >
-            {open ? "CLOSE" : "EXPLORE"}
+            EXPLORE
             <ArrowRight
               size={14}
               strokeWidth={1.5}
-              className={`transition-transform duration-300 ${
-                open ? "rotate-90" : "group-hover:translate-x-1"
-              }`}
+              className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </a>
         </div>
       </article>
 
       <div
-        id="program-detail"
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
+        id="benefits"
+        className="scroll-mt-24 mt-16 border-t border-white/10 pt-16"
       >
-        <div className="overflow-hidden">
-          <div className="mt-14 border-t border-white/10 pt-14">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-              <div>
-                <p className="font-label text-[10px] tracking-[0.35em] text-white/50">
-                  WHAT&rsquo;S INCLUDED
-                </p>
-                <ul className="mt-8 flex flex-col gap-5">
-                  {PROGRAM.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-4">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-black">
-                        <Check size={12} strokeWidth={3} />
-                      </span>
-                      <span className="text-sm leading-relaxed text-white/80">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="font-label text-[10px] tracking-[0.35em] text-white/50">
+              WHAT&rsquo;S INCLUDED
+            </p>
+            <ul className="mt-8 flex flex-col gap-5">
+              {PROGRAM.includes.map((item) => (
+                <li key={item} className="flex items-start gap-4">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-black">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  <span className="text-sm leading-relaxed text-white/80">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-                <a
-                  href={whatsappUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-12 inline-flex items-center gap-3 bg-accent px-7 py-4 font-label text-[11px] tracking-[0.25em] text-black transition-colors hover:bg-white"
-                >
-                  BOOK A SLOT
-                  <ArrowRight size={14} strokeWidth={2} />
-                </a>
-              </div>
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-12 inline-flex items-center gap-3 bg-accent px-7 py-4 font-label text-[11px] tracking-[0.25em] text-black transition-colors hover:bg-white"
+            >
+              APPLY FOR COACHING
+              <ArrowRight size={14} strokeWidth={2} />
+            </a>
+          </div>
 
-              <div className="grid grid-cols-2 grid-rows-2 gap-3">
-                {PROGRAM.gallery.map((img) => (
-                  <img
-                    key={img.src}
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className={`h-full w-full object-cover grayscale transition-[filter] duration-500 ease-out hover:grayscale-0 ${
-                      img.tall ? "row-span-2" : "aspect-square"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-2 grid-rows-2 gap-3">
+            {PROGRAM.gallery.map((img) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className={`h-full w-full object-cover grayscale transition-[filter] duration-500 ease-out hover:grayscale-0 ${
+                  img.tall ? "row-span-2" : "aspect-square"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
