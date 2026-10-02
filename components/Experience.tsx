@@ -8,7 +8,6 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Marquee } from "@/components/sections/Marquee";
 import { Story } from "@/components/sections/Story";
 import { Programs } from "@/components/sections/Programs";
-import { Method } from "@/components/sections/Method";
 import { Statement } from "@/components/sections/Statement";
 import { Transformations } from "@/components/sections/Transformations";
 import { Testimonial } from "@/components/sections/Testimonial";
@@ -87,11 +86,10 @@ export default function Experience() {
       <main className="relative z-10 bg-black">
         <Story />
         <Programs />
+        <Testimonial />
         <Marquee />
-        <Method />
         <Statement />
         <Transformations />
-        <Testimonial />
         <CTA />
         <Footer />
       </main>

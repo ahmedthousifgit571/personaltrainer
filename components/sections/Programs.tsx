@@ -4,11 +4,11 @@ import { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { scrollToTarget } from "@/hooks/useLenis";
-import { frameUrl, whatsappUrl } from "@/lib/constants";
+import { whatsappUrl } from "@/lib/constants";
 
 const PROGRAM = {
   title: "1:1 Private Coaching",
-  still: frameUrl(100),
+  still: "/images/EasaImage.jpg",
   copy: "Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
   includes: [
     "Unlimited personalized workout iterations",
@@ -55,7 +55,7 @@ export function Programs() {
             src={PROGRAM.still}
             alt={PROGRAM.title}
             loading="lazy"
-            className="aspect-[4/5] w-full object-cover grayscale contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
+            className="aspect-[4/5] w-full object-cover object-top grayscale contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
           />
         </div>
 

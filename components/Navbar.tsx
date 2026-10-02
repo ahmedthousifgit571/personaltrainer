@@ -8,7 +8,6 @@ import { BRAND } from "@/lib/constants";
 const LINKS = [
   { label: "PROGRAMS", href: "#programs" },
   { label: "BENEFITS", href: "#benefits" },
-  { label: "METHOD", href: "#method" },
   { label: "RESULTS", href: "#results" },
   { label: "CONTACT", href: "#contact" },
 ];

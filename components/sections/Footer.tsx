@@ -1,22 +1,16 @@
-"use client";
-
-import { scrollToTarget } from "@/hooks/useLenis";
-import { whatsappUrl } from "@/lib/constants";
-
-const SITEMAP = [
-  { label: "Programs", href: "#programs" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Method", href: "#method" },
-  { label: "Results", href: "#results" },
-  { label: "Contact", href: "#contact" },
-];
-
 const SOCIAL = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/easa.va?igsh=MWRjdDNiYTAwemRtZg%3D%3D&utm_source=qr",
   },
-  { label: "WhatsApp", href: whatsappUrl() },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@easav.a?si=R_SR3FAgqRMWCnOO",
+  },
+  {
+    label: "Community",
+    href: "https://www.skool.com/jacked-nerds-club-6778/about?ref=d4865262388848189f72daa647739620",
+  },
 ];
 
 export function Footer() {
@@ -27,24 +21,7 @@ export function Footer() {
           Enhance your performance through discipline.
         </p>
 
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:justify-items-end">
-          <div>
-            <p className="mb-5 font-label text-[10px] tracking-[0.35em] text-white/40">
-              SITEMAP
-            </p>
-            <ul className="space-y-3">
-              {SITEMAP.map((item) => (
-                <li key={item.label}>
-                  <button
-                    onClick={() => scrollToTarget(item.href)}
-                    className="text-sm text-white/70 transition-colors hover:text-accent"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid grid-cols-2 gap-10 lg:justify-items-end">
           <div>
             <p className="mb-5 font-label text-[10px] tracking-[0.35em] text-white/40">
               SOCIAL

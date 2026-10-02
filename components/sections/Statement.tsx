@@ -6,7 +6,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { scrollToTarget } from "@/hooks/useLenis";
 import { frameUrl, BRAND } from "@/lib/constants";
 
-const STILLS = [frameUrl(20), frameUrl(155), frameUrl(280)];
+const STILLS = ["/images/easaback.jpg", frameUrl(155), "/images/easafront.jpg"];
 
 export function Statement() {
   const ref = useRef<HTMLElement>(null);
@@ -34,10 +34,10 @@ export function Statement() {
 
           <button
             data-reveal
-            onClick={() => scrollToTarget("#method")}
+            onClick={() => scrollToTarget("#results")}
             className="group mt-12 inline-flex items-center gap-3 font-label text-[11px] tracking-[0.3em] text-white transition-colors hover:text-accent"
           >
-            DISCOVER THE METHOD
+            SEE CLIENT RESULTS
             <ArrowRight
               size={15}
               strokeWidth={1.5}
