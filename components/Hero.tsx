@@ -23,7 +23,11 @@ export function Hero({ cinematicRef, ready }: Props) {
         duration: 1.2,
         stagger: 0.12,
         ease: "power3.out",
-        delay: 0.3,
+        scrollTrigger: {
+          trigger: rootRef.current,
+          start: "top 75%",
+          once: true,
+        },
       });
     }, rootRef);
     return () => ctx.revert();

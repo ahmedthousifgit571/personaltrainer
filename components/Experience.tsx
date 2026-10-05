@@ -64,27 +64,29 @@ export default function Experience() {
       <Navbar />
       <FloatingCTA />
 
-      {/* HERO ZONE — full-screen video background */}
-      <section ref={heroSectionRef} className="relative h-screen w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          key={videoSrc}
-          className="absolute inset-0 h-full w-full object-cover"
-          src={videoSrc}
-          muted
-          autoPlay
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden
-        />
-        <div className="scrim pointer-events-none absolute inset-0" />
-        <Hero cinematicRef={heroSectionRef} ready={ready} />
-      </section>
-
-      {/* CONTENT ZONE — normal flow */}
+      {/* CONTENT ZONE */}
       <main className="relative z-10 bg-black">
+        {/* COACH / STORY ZONE — First Section */}
         <Story />
+
+        {/* VIDEO ZONE — Second Section with full-screen video background */}
+        <section ref={heroSectionRef} className="relative h-screen w-full overflow-hidden">
+          <video
+            ref={videoRef}
+            key={videoSrc}
+            className="absolute inset-0 h-full w-full object-cover"
+            src={videoSrc}
+            muted
+            autoPlay
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden
+          />
+          <div className="scrim pointer-events-none absolute inset-0" />
+          <Hero cinematicRef={heroSectionRef} ready={ready} />
+        </section>
+
         <Programs />
         <Testimonial />
         <Marquee />

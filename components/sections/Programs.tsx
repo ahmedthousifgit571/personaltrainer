@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/constants";
 
 const PROGRAM = {
   title: "1:1 Private Coaching",
-  still: "/images/EasaImage.jpg",
+  still: "/images/easatransformed.jpg",
   copy: "Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
   includes: [
     "Unlimited personalized workout iterations",
