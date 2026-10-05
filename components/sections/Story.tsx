@@ -115,7 +115,6 @@ export function Story() {
 
             {/* CTA button */}
             <a
-              data-reveal
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
