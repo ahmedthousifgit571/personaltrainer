@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/constants";
 
 const PROGRAM = {
   title: "1:1 Private Coaching",
-  still: "/images/easatransformed.jpg",
+  still: "/images/EasaSelfie.jpg",
   copy: "Every rep coached, every variable managed — training, recovery and nutrition rebuilt around your life.",
   includes: [
     "Unlimited personalized workout iterations",
@@ -20,6 +20,7 @@ const PROGRAM = {
   ],
   gallery: [
     { src: "/images/Easa.jpg", alt: "Coach physique — private studio", tall: true },
+    { src: "/images/EasaSelfie.jpg", alt: "Coach Easa — gym selfie" },
     { src: "/images/Image%20(3).jpg", alt: "Hands-on training session" },
     { src: "/images/Image%20(9).jpg", alt: "Client transformation result" },
   ],
@@ -118,7 +119,7 @@ export function Programs() {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 grid-rows-2 gap-3">
+          <div className="grid grid-cols-2 grid-rows-3 gap-3">
             {PROGRAM.gallery.map((img) => (
               <img
                 key={img.src}
@@ -126,7 +127,7 @@ export function Programs() {
                 alt={img.alt}
                 loading="lazy"
                 className={`h-full w-full object-cover grayscale transition-[filter] duration-500 ease-out hover:grayscale-0 ${
-                  img.tall ? "row-span-2" : "aspect-square"
+                  img.tall ? "row-span-3" : "aspect-square"
                 }`}
               />
             ))}
