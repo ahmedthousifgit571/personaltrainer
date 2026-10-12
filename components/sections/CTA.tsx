@@ -2,11 +2,13 @@
 
 import { useRef } from "react";
 import { useReveal } from "@/hooks/useReveal";
-import { frameUrl, whatsappUrl } from "@/lib/constants";
+import { frameUrl } from "@/lib/constants";
+import { useCoachingModal } from "@/components/CoachingModalContext";
 
 export function CTA() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
+  const { open } = useCoachingModal();
 
   return (
     <section
@@ -50,14 +52,12 @@ export function CTA() {
           data-reveal
           className="mt-12 flex justify-center"
         >
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={open}
             className="bg-accent px-10 py-5 font-label text-[11px] font-medium tracking-[0.25em] text-black transition-colors hover:bg-white"
           >
             APPLY FOR COACHING
-          </a>
+          </button>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { scrollToTarget } from "@/hooks/useLenis";
-import { whatsappUrl } from "@/lib/constants";
+import { useCoachingModal } from "@/components/CoachingModalContext";
 
 const PROGRAM = {
   title: "1:1 Private Coaching",
@@ -32,6 +32,7 @@ const PROGRAM = {
 export function Programs() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
+  const { open } = useCoachingModal();
 
   return (
     <section id="programs" ref={ref} className="px-6 py-28 lg:px-12 lg:py-36">
@@ -108,15 +109,13 @@ export function Programs() {
               ))}
             </ul>
 
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={open}
               className="mt-12 inline-flex items-center gap-3 bg-accent px-7 py-4 font-label text-[11px] tracking-[0.25em] text-black transition-colors hover:bg-white"
             >
               APPLY FOR COACHING
               <ArrowRight size={14} strokeWidth={2} />
-            </a>
+            </button>
           </div>
 
           <div className="grid grid-cols-2 grid-rows-3 gap-3">

@@ -13,6 +13,8 @@ import { Transformations } from "@/components/sections/Transformations";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
+import { CoachingModalProvider } from "@/components/CoachingModalContext";
+import { CoachingModal } from "@/components/CoachingModal";
 
 function detectMobile(): boolean {
   if (typeof window === "undefined") return false;
@@ -60,8 +62,10 @@ export default function Experience() {
   const videoSrc = isMobile ? "/videos/gymMobile.mp4" : "/videos/gymDesktop.mp4";
 
   return (
+    <CoachingModalProvider>
     <div className="bg-black">
       <Navbar />
+      <CoachingModal />
       <FloatingCTA />
 
       {/* CONTENT ZONE */}
@@ -96,5 +100,6 @@ export default function Experience() {
         <Footer />
       </main>
     </div>
+    </CoachingModalProvider>
   );
 }
