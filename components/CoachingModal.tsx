@@ -71,6 +71,8 @@ export function CoachingModal() {
     setStatus("submitting");
 
     try {
+      if (!APPS_SCRIPT_URL) throw new Error("NEXT_PUBLIC_APPS_SCRIPT_URL is not set");
+
       const payload = {
         ...form,
         date: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
