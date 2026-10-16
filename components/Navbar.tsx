@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, Fragment } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, ShoppingBag } from "lucide-react";
 import { scrollToTarget, startLenis, stopLenis } from "@/hooks/useLenis";
 import { BRAND } from "@/lib/constants";
 
@@ -87,13 +87,24 @@ export function Navbar() {
             ))}
           </ul>
 
-          <button
-            onClick={() => scrollToTarget("#contact")}
-            className="hidden items-center gap-1 font-label text-[11px] tracking-[0.25em] text-white transition-colors hover:text-accent lg:flex"
-          >
-            APPLY
-            <ArrowUpRight size={14} strokeWidth={1.5} />
-          </button>
+          <div className="hidden items-center gap-3 lg:flex">
+            <a
+              href="https://pages.razorpay.com/pl_Qjhd11Z2KYB5Ci/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-label text-[11px] font-semibold tracking-[0.15em] text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(163,255,0,0.3)]"
+            >
+              <ShoppingBag size={13} strokeWidth={2} />
+              BASIC PPL V.01
+            </a>
+            <button
+              onClick={() => scrollToTarget("#contact")}
+              className="flex items-center gap-1 font-label text-[11px] tracking-[0.25em] text-white transition-colors hover:text-accent"
+            >
+              APPLY
+              <ArrowUpRight size={14} strokeWidth={1.5} />
+            </button>
+          </div>
 
           <button
             onClick={() => setOpen(!open)}
@@ -131,6 +142,15 @@ export function Navbar() {
             ))}
           </ul>
 
+          <a
+            href="https://pages.razorpay.com/pl_Qjhd11Z2KYB5Ci/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-3 flex items-center justify-center gap-2 border border-accent bg-accent/10 py-5 font-label text-[12px] font-medium tracking-[0.25em] text-accent transition-colors hover:bg-accent hover:text-black"
+          >
+            <ShoppingBag size={16} strokeWidth={1.5} />
+            BASIC PPL V.01
+          </a>
           <button
             onClick={() => go("#contact")}
             className="flex items-center justify-center gap-2 bg-accent py-5 font-label text-[12px] font-medium tracking-[0.25em] text-black"

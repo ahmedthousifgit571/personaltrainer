@@ -3,11 +3,12 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import { whatsappUrl } from "@/lib/constants";
+import { useCoachingModal } from "@/components/CoachingModalContext";
 
 export function Story() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
+  const { open: openModal } = useCoachingModal();
 
   return (
     <section
@@ -114,10 +115,8 @@ export function Story() {
             </div>
 
             {/* CTA button */}
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openModal}
               className="group mt-10 inline-flex w-fit items-center gap-3 bg-accent px-7 py-4 font-label text-[11px] font-semibold tracking-[0.3em] text-black transition-all duration-300 hover:gap-5 hover:bg-white hover:shadow-[0_0_30px_rgba(201,247,58,0.25)]"
             >
               START YOUR TRANSFORMATION
@@ -126,7 +125,7 @@ export function Story() {
                 strokeWidth={2}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </a>
+            </button>
 
           </div>
         </div>
